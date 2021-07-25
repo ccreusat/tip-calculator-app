@@ -96,8 +96,20 @@ input[type="number"]::placeholder {
 	background-image: url(./images/icon-person.svg);
 }
 
-.number-of-people.error {
+.error input {
 	border: 2px solid var(--error);
+}
+
+.error .error-message {
+	display: block !important;
+	color: var(--error);
+	font-size: 16px;
+}
+
+.error-message {
+	display: none !important;
+	color: var(--error);
+	font-size: 16px;
 }
 
 .legend {
@@ -112,11 +124,6 @@ input[type="number"]::placeholder {
 	display: block;
 	font-size: 13px;
 	color: var(--subtitle);
-}
-
-.legend .error {
-	color: var(--error);
-	font-size: 16px;
 }
 
 /* Main structure */

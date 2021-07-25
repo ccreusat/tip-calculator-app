@@ -4,49 +4,72 @@
 	const form = document.getElementById("splitter");
 	const bill = document.getElementById("bill");
 	const tips = document.querySelectorAll('input[name="tip"]');
+	const defaultTip = document.querySelector('input[name="tip"]:checked');
 	const custom = document.getElementById("tip-custom");
 	const numOfPeople = document.getElementById("number-of-people");
-	const warning = document.getElementById("error");
+	const warning = document.querySelectorAll(".error-message");
 	const amount = document.getElementById("amount");
 	const total = document.getElementById("total");
 	const reset = document.getElementById("reset");
 	//
-	let selectedTip = 0;
+	let selectedTip = defaultTip.value || 0;
 	let tipAmount = 0;
 	let result = 0;
 
 	reset.disabled = true;
 
 	const tipCalculator = () => {
-		if (Number(numOfPeople.value) === 0) {
-			warning.innerHTML = "Can't be zero";
-			numOfPeople.classList.add("error");
-			amount.innerHTML = 0.0;
-			total.innerHTML = 0.0;
-		} else {
-			warning.innerHTML = "";
-			numOfPeople.classList.remove("error");
+		const clearInput = node => {
+			node.addEventListener("click", () => {
+				node.value = "";
+			});
+		};
 
-			if (Number(custom.value) === 0) {
-				for (let tip of tips) {
-					if (tip.checked) {
-						selectedTip = Number(tip.value);
-						break;
-					}
-				}
+		const handleError = node => {
+			if (node.value === "") {
+				node.parentElement.classList.add("error");
 			} else {
-				selectedTip = Number(custom.value);
+				node.parentElement.classList.remove("error");
 			}
+		};
 
-			result = Number(bill.value);
-			result += Number(selectedTip / 100) * Number(bill.value);
-			result /= Number(numOfPeople.value);
+		document
+			.querySelectorAll('input[type="text"]')
+			.forEach(item => clearInput(item));
 
-			tipAmount = Number(selectedTip / 100) * Number(bill.value);
-			tipAmount /= Number(numOfPeople.value);
+		document
+			.querySelectorAll('input[type="text"]:not(.tips__custom)')
+			.forEach(item => handleError(item));
 
-			amount.innerHTML = tipAmount.toFixed(2);
-			total.innerHTML = result.toFixed(2);
+		tips.forEach(tip => {
+			if (tip.checked) {
+				selectedTip = tip.value;
+				custom.value = "";
+			}
+		});
+
+		custom.addEventListener("input", () => {
+			selectedTip = custom.value;
+
+			tips.forEach(tip => {
+				tip.checked = false;
+			});
+		});
+
+		let peopleValue = numOfPeople.value;
+		let billValue = bill.value;
+
+		if (peopleValue !== "" && billValue !== "") {
+			tipAmount = parseInt((selectedTip / 100) * billValue);
+			tipAmount /= parseInt(peopleValue);
+
+			result = parseInt(billValue);
+			result += parseInt((selectedTip / 100) * billValue);
+			result /= parseInt(peopleValue);
+
+			amount.textContent = tipAmount.toFixed(2);
+			total.textContent = result.toFixed(2);
+
 			reset.disabled = false;
 		}
 	};
