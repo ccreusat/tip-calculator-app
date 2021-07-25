@@ -7,7 +7,6 @@
 	const defaultTip = document.querySelector('input[name="tip"]:checked');
 	const custom = document.getElementById("tip-custom");
 	const numOfPeople = document.getElementById("number-of-people");
-	const warning = document.querySelectorAll(".error-message");
 	const amount = document.getElementById("amount");
 	const total = document.getElementById("total");
 	const reset = document.getElementById("reset");
