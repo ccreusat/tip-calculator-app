@@ -16,6 +16,7 @@
 	let result = 0;
 
 	reset.disabled = true;
+	form.onsubmit = e => e.preventDefault();
 
 	const tipCalculator = () => {
 		const clearInput = node => {
@@ -70,6 +71,25 @@
 			total.textContent = result.toFixed(2);
 
 			reset.disabled = false;
+
+			reset.onclick = () => {
+				console.log("ok");
+				console.log(bill.value);
+				bill.value = "";
+				numOfPeople.value = "";
+				selectedTip = defaultTip.value;
+				document.querySelector(
+					'input[name="tip"][value="5"]'
+				).checked = true;
+				console.log(selectedTip);
+				amount.textContent = "0.00";
+				total.textContent = "0.00";
+
+				console.log(
+					document.querySelector('input[name="tip"][value="5"]')
+						.checked
+				);
+			};
 		}
 	};
 
