@@ -84,11 +84,6 @@
 				console.log(selectedTip);
 				amount.textContent = "0.00";
 				total.textContent = "0.00";
-
-				console.log(
-					document.querySelector('input[name="tip"][value="5"]')
-						.checked
-				);
 			};
 		}
 	};
