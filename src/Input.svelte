@@ -18,6 +18,13 @@
     error = false;
   }
 
+  $: if (isNaN(value)) {
+    value = "";
+    error = true;
+  } else {
+    error = false;
+  }
+
   // Methods
   const onChange = (val) => {
     if (id === "bill") {

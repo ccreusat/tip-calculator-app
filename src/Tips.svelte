@@ -12,6 +12,8 @@
   // Listeners
   $: selected = $selectedTip;
 
+  $: if (isNaN(value)) value = "";
+
   // Methods
   const tips = [5, 10, 15, 25, 50];
 
