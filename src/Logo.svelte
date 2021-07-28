@@ -1,4 +1,5 @@
 <script>
+  // Variables
 	export let src = './images/logo.svg';
 	export let name = 'Splitter';
 </script>

@@ -1,12 +1,18 @@
 <script>
+  // Store
   import {
     selectedTip,
     customTip
   } from "./store";
 
+  // Variables
   let selected = $selectedTip;
   let value = "";
 
+  // Listeners
+  $: selected = $selectedTip;
+
+  // Methods
   const tips = [5, 10, 15, 25, 50];
 
   const onChange = () => {
@@ -20,8 +26,6 @@
     customTip.set(selected);
     selectedTip.set(selected);
   }
-
-  $: selected = $selectedTip;
 </script>
 
 <fieldset class="fieldset">

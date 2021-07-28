@@ -1,21 +1,24 @@
 <script>
+  // Store
   import {
     bill,
     people,
-    selectedTip,
     getTotal,
     getTotalAmount
   } from "./store.js";
 
+  // Dispatcher
   import {
     createEventDispatcher
   } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
+  // Variables
   let total = "0.00";
   let amount = "0.00";
 
+  // Listeners
   $: if (
 			$people !== "" &&
 			$bill !== "" &&
@@ -29,6 +32,7 @@
       amount = "0.00";
     }
 
+  // Methods
   const reset = () => dispatch('reset');
 </script>
 

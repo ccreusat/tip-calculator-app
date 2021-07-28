@@ -5,8 +5,6 @@
   import Tips from "./Tips.svelte";
   import Result from "./Result.svelte";
 
-  // Variables
-
   // Store
   import {
     bill,
@@ -35,7 +33,6 @@
       <Tips />
       <Input id={"number-of-people"} text={"Number of people"} value={$people} />
     </div>
-    <!-- <Result /> -->
     <Result on:reset={handleResetForm} />
   </form>
 </main>
