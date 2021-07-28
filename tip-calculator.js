@@ -26,7 +26,7 @@
 		};
 
 		const handleError = node => {
-			if (node.value === "") {
+			if (node.value === "" || node.value === "0") {
 				node.parentElement.classList.add("error");
 			} else {
 				node.parentElement.classList.remove("error");
@@ -59,7 +59,12 @@
 		let peopleValue = numOfPeople.value;
 		let billValue = bill.value;
 
-		if (peopleValue !== "" && billValue !== "") {
+		if (
+			peopleValue !== "" &&
+			billValue !== "" &&
+			peopleValue !== "0" &&
+			billValue !== "0"
+		) {
 			tipAmount = parseInt((selectedTip / 100) * billValue);
 			tipAmount /= parseInt(peopleValue);
 
