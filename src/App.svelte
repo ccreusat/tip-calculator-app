@@ -1,77 +1,39 @@
 <script>
+  // Components
   import Logo from './Logo.svelte';
   import Input from './Input.svelte';
+  import Tips from "./Tips.svelte";
+  import Result from "./Result.svelte";
 
-  let bill = "bill";
-  let billText = "Bill";
-  let numOfPeople = "number-of-people";
-  let numOfPeopleText = "Number of people";
+  // Variables
+
+  // Store
+  import {
+    bill,
+    people,
+    selectedTip
+  } from "./store.js";
+
+  // Methods
+  const handleOnSubmit = (e) => e.preventDefault();
+
+  const handleResetForm = () => {
+    bill.set(0);
+    people.set(0);
+    selectedTip.set(5);
+  }
 </script>
 
 <main>
-	<Logo />
+  <Logo />
 
-  <div class="splitter__container">
+  <form on:submit={handleOnSubmit} autocomplete="off" class="splitter__container">
     <div class="splitter__calculator">
-      <Input id={bill} text={billText} />
-      <Input id={numOfPeople} text={numOfPeopleText} />
+      <Input id={"bill"} text={"Bill"} value={$bill} />
+      <Tips />
+      <Input id={"number-of-people"} text={"Number of people"} value={$people} />
     </div>
-  </div>
+    <!-- <Result /> -->
+    <Result on:reset={handleResetForm} />
+  </form>
 </main>
-
-<style>
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :root {
-    --body: hsl(185, 41%, 84%);
-    --dark-cyan: hsl(183, 100%, 15%);
-    --light-cyan: hsl(172, 67%, 45%);
-    --white: hsl(0, 0%, 100%);
-    --error: hsl(13, 70%, 61%);
-
-    --small-border-radius: 5px;
-    --medium-border-radius: 15px;
-    --large-border-radius: 25px;
-
-    --legend: hsl(186, 14%, 43%);
-    --subtitle: hsl(184, 14%, 56%);
-  }
-
-  :global(html),
-  :global(body) {
-    height: 100vh;
-  }
-
-  :global(body) {
-    font-family: "Space Mono", monospace;
-    font-size: 24px;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    background-color: var(--body);
-  }
-  .splitter__container {
-    display: flex;
-    justify-content: space-between;
-    width: 920px;
-    border-radius: var(--large-border-radius);
-    background-color: var(--white);
-  }
-
-  .splitter__container > div {
-    flex-basis: 0;
-    flex: 1;
-  }
-
-  .splitter__calculator {
-    margin: 48px;
-    min-width: 380px;
-    max-width: 380px;
-  }
-</style>

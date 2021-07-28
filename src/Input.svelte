@@ -1,81 +1,43 @@
 <script>
-	export let id = "bill";
-  export let text = "Bill";
-  export let errorMessage = "Can't be zero";
+  export let id;
+  export let text;
+  export let value = "";
+  let error = false;
+
+  import {
+    bill,
+    people
+  } from "./store";
+
+  $: if (value === "" || value === 0) {
+    error = true;
+  } else {
+    error = false;
+  }
+
+  const onChange = (val) => {
+    if (id === "bill") {
+      if (val !== "") {
+        bill.set(parseFloat(val));
+      } else {
+        bill.set("")
+      }
+    }
+
+    if (id === "number-of-people") {
+      if (val !== "") {
+        people.set(parseFloat(val));
+      } else {
+        people.set("");
+      }
+    }
+  }
 </script>
 
 <fieldset class="fieldset">
-  <div class="control">
-    <label class="legend flex" for="{id}">{text}<span
-      class="error-message">{errorMessage}</span></label>
-    <input type="text" id="{id}" class="{id}" name="{id}" placeholder="0">
+  <div class:error>
+    <label class="legend flex" for="{id}">{text}<span class="error-message">Can't be zero</span></label>
+    <input bind:value={value} on:input={onChange(value)} type="text" id="{id}" class="{id}" name="{id}" placeholder="0"
+      pattern="\d*" />
   </div>
 </fieldset>
-
-<style>
-	fieldset {
-	border: 0;
-}
-
-fieldset:nth-child(2) {
-	margin: 40px 0;
-}
-
-label {
-	cursor: pointer;
-}
-
-input[type="text"] {
-	cursor: pointer;
-	padding-left: 12px;
-	padding-right: 12px;
-	width: 100%;
-	line-height: 48px;
-	border: 0;
-	font-family: "Space Mono", monospace;
-	font-size: 24px;
-	font-weight: 700;
-	color: var(--dark-cyan);
-	text-align: right;
-	border-radius: var(--small-border-radius);
-	background-color: #f3f9fa;
-}
-
-input[type="text"]:focus {
-	border: 2px solid var(--light-cyan);
-	outline: none;
-}
-
-input[type="text"]::placeholder {
-	color: hsla(183, 100%, 15%, 35%);
-}
-
-.bill {
-	background-position: 20px center;
-	background-repeat: no-repeat;
-}
-
-.bill {
-	background-image: url(./images/icon-dollar.svg);
-}
-
-.error-message {
-	display: none !important;
-	color: var(--error);
-	font-size: 16px;
-}
-
-.legend {
-	display: block;
-	margin-bottom: 6px;
-	font-size: 16px;
-	font-weight: 700;
-	color: var(--legend);
-}
-
-.legend span {
-	display: block;
-	font-size: 13px;
-	color: var(--subtitle);
-}
-</style>
