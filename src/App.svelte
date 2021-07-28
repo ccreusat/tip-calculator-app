@@ -11,16 +11,18 @@
   import {
     bill,
     people,
-    selectedTip
+    selectedTip,
+    customTip
   } from "./store.js";
 
   // Methods
   const handleOnSubmit = (e) => e.preventDefault();
 
   const handleResetForm = () => {
-    bill.set(0);
-    people.set(0);
+    bill.set("");
+    people.set("");
     selectedTip.set(5);
+    customTip.set("");
   }
 </script>
 

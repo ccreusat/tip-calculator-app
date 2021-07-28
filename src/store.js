@@ -5,6 +5,7 @@ import { writable, derived } from "svelte/store";
 export const bill = writable("");
 export const people = writable("");
 export const selectedTip = writable(5);
+export const customTip = writable("");
 
 // Derived Store
 export const getTotal = derived(

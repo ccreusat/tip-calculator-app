@@ -6,25 +6,28 @@
     getTotal,
     getTotalAmount
   } from "./store.js";
+
   import {
     createEventDispatcher
   } from 'svelte';
+
   const dispatch = createEventDispatcher();
 
   let total = "0.00";
   let amount = "0.00";
 
-  $: if ($bill !== "" && $people !== "") {
-    total = $getTotal;
-  } else {
-    total = "0.00";
-  }
-
-  $: if ($selectedTip && $people) {
-    amount = $getTotalAmount
-  } else {
-    amount = "0.00";
-  }
+  $: if (
+			$people !== "" &&
+			$bill !== "" &&
+			$people !== 0 &&
+			$bill !== 0
+		) {
+      total = $getTotal;
+      amount = $getTotalAmount;
+    } else {
+      total = "0.00";
+      amount = "0.00";
+    }
 
   const reset = () => dispatch('reset');
 </script>

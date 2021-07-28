@@ -1,19 +1,27 @@
 <script>
   import {
-    selectedTip
+    selectedTip,
+    customTip
   } from "./store";
 
-  let selected = 5;
+  let selected = $selectedTip;
   let value = "";
+
   const tips = [5, 10, 15, 25, 50];
+
   const onChange = () => {
     value = "";
-    selectedTip.set(parseInt(selected));
+    customTip.set(value);
+    selectedTip.set(selected);
   };
+
   const onCustomValue = (val) => {
     selected = val;
-    selectedTip.set(parseInt(selected));
+    customTip.set(selected);
+    selectedTip.set(selected);
   }
+
+  $: selected = $selectedTip;
 </script>
 
 <fieldset class="fieldset">
