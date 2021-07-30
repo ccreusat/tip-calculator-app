@@ -12,37 +12,50 @@ const App = () => {
 	const [people, setPeople] = useState("");
 	const [tip, setTip] = useState("");
 	const [total, setTotal] = useState("0.00");
+	const [tipAmount, setTipAmount] = useState("0.00");
 
 	const handleFormSubmit = e => {
 		e.preventDefault();
 	};
 
 	const getBillValue = val => {
-		setBill(val);
+		setBill(parseFloat(val));
 	};
 
 	const getPeopleValue = val => {
-		setPeople(val);
+		setPeople(parseFloat(val));
 	};
 
 	const getTipValue = val => {
 		setTip(val);
-		console.log(val);
 	};
 
 	useEffect(() => {
 		const calculateTotal = (bill, tip, people) => {
+			let result;
 			if (
 				(bill !== "" && people !== "") ||
 				(bill !== "0" && people !== "0")
 			) {
-				let result = parseFloat(bill);
+				result += bill;
 				result += (tip / 100) * bill;
 				result /= people;
-				setTotal(result.toFixed(2));
+				setTotal(parseFloat(result).toFixed(2));
+			}
+		};
+		const calculateAmount = (bill, tip, people) => {
+			let amount;
+			if (
+				(bill !== "" && people !== "") ||
+				(bill !== "0" && people !== "0")
+			) {
+				amount += (tip / 100) * bill;
+				amount /= people;
+				setTipAmount(parseFloat(amount).toFixed(2));
 			}
 		};
 		calculateTotal(bill, tip, people);
+		calculateAmount(bill, tip, people);
 	}, [bill, tip, people]);
 
 	return (
@@ -66,7 +79,7 @@ const App = () => {
 						getPeopleValue={getPeopleValue}
 					/>
 				</div>
-				<Result total={total} />
+				<Result tipAmount={tipAmount} total={total} />
 			</div>
 		</form>
 	);

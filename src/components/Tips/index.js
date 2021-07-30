@@ -10,7 +10,6 @@ const Tips = ({ getTipValue }) => {
 	}, [selectedTip, getTipValue]);
 
 	const onSelectTip = tip => {
-		console.log(tip);
 		setSelectedTip(tip);
 		setCustomTip("");
 		getTipValue(tip);

@@ -8,8 +8,6 @@ const Input = ({ name, text, getBillValue, getPeopleValue }) => {
 
 	const handleChange = (name, { target }) => {
 		if (!isNaN(target.value)) {
-			console.log(name);
-			console.log(target.value);
 			setValue({
 				id: name,
 				val: target.value,

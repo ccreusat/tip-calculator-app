@@ -1,6 +1,6 @@
 import React from "react";
 
-function Result({ total }) {
+function Result({ tipAmount, total }) {
 	return (
 		<div className="splitter__result">
 			<div>
@@ -9,7 +9,7 @@ function Result({ total }) {
 						Tip Amount <span>/ person</span>
 					</label>
 					<strong className="price">
-						$<span id="amount">0.00</span>
+						$<span id="amount">{tipAmount}</span>
 					</strong>
 				</div>
 
