@@ -89,11 +89,11 @@ input[type="number"]::placeholder {
 }
 
 .bill {
-	background-image: url(./images/icon-dollar.svg);
+	background-image: url(../images/icon-dollar.svg);
 }
 
 .number-of-people {
-	background-image: url(./images/icon-person.svg);
+	background-image: url(../images/icon-person.svg);
 }
 
 .error input {
