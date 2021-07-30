@@ -1,6 +1,9 @@
 import React from "react";
 
 function Result({ tipAmount, total }) {
+	React.useEffect(() => {
+		console.log("test", typeof tipAmount);
+	}, [tipAmount]);
 	return (
 		<div className="splitter__result">
 			<div>

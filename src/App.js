@@ -11,8 +11,8 @@ const App = () => {
 	const [bill, setBill] = useState("");
 	const [people, setPeople] = useState("");
 	const [tip, setTip] = useState("");
-	const [total, setTotal] = useState("0.00");
-	const [tipAmount, setTipAmount] = useState("0.00");
+	const [total, setTotal] = useState(2);
+	const [tipAmount, setTipAmount] = useState(2);
 
 	const handleFormSubmit = e => {
 		e.preventDefault();
@@ -31,30 +31,36 @@ const App = () => {
 	};
 
 	useEffect(() => {
-		const calculateTotal = (bill, tip, people) => {
+		/* const calculateTotal = (bill, tip, people) => {
 			let result;
 			if (
 				(bill !== "" && people !== "") ||
 				(bill !== "0" && people !== "0")
 			) {
 				result += bill;
-				result += (tip / 100) * bill;
-				result /= people;
-				setTotal(parseFloat(result).toFixed(2));
+				console.log(typeof bill);
+				console.log(typeof people);
+				console.log(typeof tip);
+				console.log(typeof result);
+				result += parseInt((tip / 100) * bill);
+				console.log(result);
+				result /= parseInt(people);
+				console.log(result);
+				// setTotal(Number(result));
 			}
-		};
+		}; */
 		const calculateAmount = (bill, tip, people) => {
 			let amount;
 			if (
 				(bill !== "" && people !== "") ||
 				(bill !== "0" && people !== "0")
 			) {
-				amount += (tip / 100) * bill;
-				amount /= people;
-				setTipAmount(parseFloat(amount).toFixed(2));
+				amount += parseInt((tip / 100) * bill);
+				amount /= parseInt(people);
+				setTipAmount(amount);
 			}
 		};
-		calculateTotal(bill, tip, people);
+		// calculateTotal(bill, tip, people);
 		calculateAmount(bill, tip, people);
 	}, [bill, tip, people]);
 
