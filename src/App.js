@@ -3,64 +3,54 @@ import { useState, useEffect } from "react";
 import "./styles/App.css";
 
 import Logo from "./components/Logo";
-import Input from "./components/Input";
+import Bill from "./components/Bill";
+import People from "./components/People";
 import Tips from "./components/Tips";
 import Result from "./components/Result";
 
 const App = () => {
 	const [bill, setBill] = useState("");
 	const [people, setPeople] = useState("");
-	const [tip, setTip] = useState("");
-	const [total, setTotal] = useState(2);
-	const [tipAmount, setTipAmount] = useState(2);
+	const [tip, setTip] = useState(5);
+	const [total, setTotal] = useState("0.00");
+	const [tipAmount, setTipAmount] = useState("0.00");
 
 	const handleFormSubmit = e => {
 		e.preventDefault();
 	};
 
-	const getBillValue = val => {
-		setBill(parseFloat(val));
-	};
-
-	const getPeopleValue = val => {
-		setPeople(parseFloat(val));
-	};
-
-	const getTipValue = val => {
-		setTip(val);
+	const reset = () => {
+		setBill("");
+		setPeople("");
+		setTip(5);
+		setTotal("0.00");
+		setTipAmount("0.00");
 	};
 
 	useEffect(() => {
-		/* const calculateTotal = (bill, tip, people) => {
+		const calculateTotal = (bill, tip, people) => {
 			let result;
-			if (
-				(bill !== "" && people !== "") ||
-				(bill !== "0" && people !== "0")
-			) {
-				result += bill;
-				console.log(typeof bill);
-				console.log(typeof people);
-				console.log(typeof tip);
-				console.log(typeof result);
-				result += parseInt((tip / 100) * bill);
-				console.log(result);
+			if (bill === "" || people === "") {
+				setTotal("0.00");
+			} else {
+				result = parseInt(bill);
+				result += parseInt((Number(tip) / 100) * bill);
 				result /= parseInt(people);
-				console.log(result);
-				// setTotal(Number(result));
-			}
-		}; */
-		const calculateAmount = (bill, tip, people) => {
-			let amount;
-			if (
-				(bill !== "" && people !== "") ||
-				(bill !== "0" && people !== "0")
-			) {
-				amount += parseInt((tip / 100) * bill);
-				amount /= parseInt(people);
-				setTipAmount(amount);
+				setTotal(result.toFixed(2));
 			}
 		};
-		// calculateTotal(bill, tip, people);
+		const calculateAmount = (bill, tip, people) => {
+			let amount;
+
+			if (bill === "" || people === "") {
+				setTipAmount("0.00");
+			} else {
+				amount = (Number(tip) / 100) * bill;
+				amount /= people;
+				setTipAmount(amount.toFixed(2));
+			}
+		};
+		calculateTotal(bill, tip, people);
 		calculateAmount(bill, tip, people);
 	}, [bill, tip, people]);
 
@@ -73,19 +63,11 @@ const App = () => {
 			<Logo />
 			<div className="splitter__container">
 				<div className="splitter__calculator">
-					<Input
-						name="bill"
-						text="Bill"
-						getBillValue={getBillValue}
-					/>
-					<Tips getTipValue={getTipValue} />
-					<Input
-						name="number-of-people"
-						text="Number of people"
-						getPeopleValue={getPeopleValue}
-					/>
+					<Bill bill={bill} setBill={setBill} />
+					<Tips setTip={setTip} />
+					<People people={people} setPeople={setPeople} />
 				</div>
-				<Result tipAmount={tipAmount} total={total} />
+				<Result tipAmount={tipAmount} total={total} reset={reset} />
 			</div>
 		</form>
 	);

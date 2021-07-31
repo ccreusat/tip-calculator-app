@@ -1,9 +1,6 @@
 import React from "react";
 
-function Result({ tipAmount, total }) {
-	React.useEffect(() => {
-		console.log("test", typeof tipAmount);
-	}, [tipAmount]);
+function Result({ tipAmount, total, reset }) {
 	return (
 		<div className="splitter__result">
 			<div>
@@ -26,7 +23,9 @@ function Result({ tipAmount, total }) {
 				</div>
 			</div>
 
-			<button id="reset">Reset</button>
+			<button id="reset" onClick={() => reset()}>
+				Reset
+			</button>
 		</div>
 	);
 }
