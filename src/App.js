@@ -41,9 +41,9 @@ const App = () => {
 			if (bill === "" || people === "") {
 				setTotal("0.00");
 			} else {
-				result = parseInt(bill);
+				result = parseFloat(bill);
 				result += parseInt((Number(tip) / 100) * bill);
-				result /= Math.round(people);
+				result /= parseInt(people);
 				setTotal(result.toFixed(2));
 			}
 		};
@@ -54,7 +54,7 @@ const App = () => {
 				setTipAmount("0.00");
 			} else {
 				amount = (Number(tip) / 100) * bill;
-				amount /= Math.round(people);
+				amount /= parseInt(people);
 				setTipAmount(amount.toFixed(2));
 			}
 		};
