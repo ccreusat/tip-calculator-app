@@ -35,7 +35,7 @@
       }
     }
 
-    if (id === "number-of-people") {
+    if (id === "numberOfPeople") {
       if (val !== "") {
         people.set(parseFloat(val));
       } else {

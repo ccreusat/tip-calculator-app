@@ -31,7 +31,7 @@
     <div class="splitter__calculator">
       <Input id={"bill"} text={"Bill"} value={$bill} />
       <Tips />
-      <Input id={"number-of-people"} text={"Number of people"} value={$people} />
+      <Input id={"numberOfPeople"} text={"Number of people"} value={$people} />
     </div>
     <Result on:reset={handleResetForm} />
   </form>
