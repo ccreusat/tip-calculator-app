@@ -68,7 +68,7 @@
 			tipAmount = parseInt((selectedTip / 100) * billValue);
 			tipAmount /= parseInt(peopleValue);
 
-			result = parseInt(billValue);
+			result = parseFloat(billValue);
 			result += parseInt((selectedTip / 100) * billValue);
 			result /= parseInt(peopleValue);
 
