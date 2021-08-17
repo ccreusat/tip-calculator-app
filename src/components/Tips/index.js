@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const tipsArr = [5, 10, 15, 25, 50];
-const Tips = ({ setTip }) => {
-	const [selectedTip, setSelectedTip] = useState(5);
-	const [customTip, setCustomTip] = useState("");
-
+const Tips = ({
+	selectedTip,
+	setSelectedTip,
+	customTip,
+	setCustomTip,
+	setTip,
+}) => {
 	useEffect(() => {
 		setTip(selectedTip);
 	}, [selectedTip, setTip]);
@@ -17,7 +20,6 @@ const Tips = ({ setTip }) => {
 	const onCustomInput = ({ target }) => {
 		setSelectedTip(target.value);
 		setCustomTip(target.value);
-		// setCustomTip(target.value);
 	};
 
 	return (
