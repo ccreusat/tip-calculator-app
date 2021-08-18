@@ -19,7 +19,7 @@
   const handleResetForm = () => {
     bill.set("");
     numberOfPeople.set("");
-    selectedTip.set(5);
+    selectedTip.set(25);
     customTip.set("");
   }
 </script>

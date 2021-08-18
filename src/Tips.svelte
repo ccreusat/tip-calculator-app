@@ -45,7 +45,7 @@
       </div>
     {/each}
     <div class="tips__control">
-      <input bind:value on:input={onCustomValue(value)} type="text" class="tips__custom" name="tip" id="tip-custom" placeholder="Custom">
+      <input bind:value={$customTip} on:input={onCustomValue($customTip)} type="text" class="tips__custom" name="tip" id="tip-custom" placeholder="Custom">
     </div>
   </div>
 </fieldset>
