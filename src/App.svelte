@@ -8,7 +8,7 @@
   // Store
   import {
     bill,
-    people,
+    numberOfPeople,
     selectedTip,
     customTip
   } from "./store.js";
@@ -18,7 +18,7 @@
 
   const handleResetForm = () => {
     bill.set("");
-    people.set("");
+    numberOfPeople.set("");
     selectedTip.set(5);
     customTip.set("");
   }
@@ -29,9 +29,9 @@
 
   <form on:submit={handleOnSubmit} autocomplete="off" class="splitter__container">
     <div class="splitter__calculator">
-      <Input id={"bill"} text={"Bill"} value={$bill} />
+      <Input bind:value={$bill} on:input={$bill} id={"bill"} text={"Bill"} />
       <Tips />
-      <Input id={"numberOfPeople"} text={"Number of people"} value={$people} />
+      <Input bind:value={$numberOfPeople} on:input={$numberOfPeople} id={"numberOfPeople"} text={"Number of people"} />
     </div>
     <Result on:reset={handleResetForm} />
   </form>

@@ -18,8 +18,7 @@
   const tips = [5, 10, 15, 25, 50];
 
   const onChange = () => {
-    value = "";
-    customTip.set(value);
+    customTip.set("");
     selectedTip.set(selected);
   };
 
@@ -46,7 +45,7 @@
       </div>
     {/each}
     <div class="tips__control">
-      <input bind:value={value} on:input={onCustomValue(value)} type="text" class="tips__custom" name="tip" id="tip-custom" placeholder="Custom">
+      <input bind:value on:input={onCustomValue(value)} type="text" class="tips__custom" name="tip" id="tip-custom" placeholder="Custom">
     </div>
   </div>
 </fieldset>

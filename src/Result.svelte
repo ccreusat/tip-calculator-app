@@ -2,7 +2,8 @@
   // Store
   import {
     bill,
-    people,
+    numberOfPeople,
+    selectedTip,
     getTotal,
     getTotalAmount
   } from "./store.js";
@@ -20,9 +21,9 @@
 
   // Listeners
   $: if (
-			$people !== "" &&
+			$numberOfPeople !== "" &&
 			$bill !== "" &&
-			$people !== 0 &&
+			$numberOfPeople !== 0 &&
 			$bill !== 0
 		) {
       total = $getTotal;

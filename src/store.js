@@ -3,18 +3,20 @@ import { writable, derived } from "svelte/store";
 
 // Basic
 export const bill = writable("");
-export const people = writable("");
+export const numberOfPeople = writable("");
 export const selectedTip = writable(5);
 export const customTip = writable("");
 
 // Derived Store
 export const getTotal = derived(
-	[bill, people, selectedTip],
-	([$bill, $people, $selectedTip]) =>
-		parseFloat(($bill + $bill * ($selectedTip / 100)) / $people).toFixed(2)
+	[bill, numberOfPeople, selectedTip],
+	([$bill, $numberOfPeople, $selectedTip]) =>
+		parseFloat(
+			$bill / $numberOfPeople + $bill * ($selectedTip / 100)
+		).toFixed(2)
 );
 export const getTotalAmount = derived(
-	[bill, people, selectedTip],
-	([$bill, $people, $selectedTip]) =>
-		parseFloat(($bill * ($selectedTip / 100)) / $people).toFixed(2)
+	[bill, numberOfPeople, selectedTip],
+	([$bill, $numberOfPeople, $selectedTip]) =>
+		parseFloat(($bill * ($selectedTip / 100)) / $numberOfPeople).toFixed(2)
 );

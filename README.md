@@ -1,105 +1,73 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Frontend Mentor - Tip calculator app solution
 
----
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-# svelte app
+## Table of contents
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Continued development](#continued-development)
+    -   [Useful resources](#useful-resources)
+-   [Author](#author)
+-   [Acknowledgments](#acknowledgments)
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+## Overview
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+### The challenge
 
+Users should be able to:
 
-## Get started
+-   View the optimal layout for the app depending on their device's screen size
+-   See hover states for all interactive elements on the page
+-   Calculate the correct tip and total cost of the bill per person
 
-Install the dependencies...
+### Screenshot
 
-```bash
-cd svelte-app
-npm install
-```
+![](./screenshot.jpg)
 
-...then start [Rollup](https://rollupjs.org):
+Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-```bash
-npm run dev
-```
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+### Links
 
-## Building and running in production mode
+-   Solution URL: [Add solution URL here](https://your-solution-url.com)
+-   Live Site URL: [Add live site URL here](https://ccreusat-tip-calculator.vercel.app/)
 
-To create an optimised version of the app:
+## My process
 
-```bash
-npm run build
-```
+### Built with
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   Mobile-first workflow
+-   [Vanilla JS](https://reactjs.org/) - branch : master
+-   [React](https://reactjs.org/) - branch : react
+-   [Svelte](https://svelte.dev/) - branch : svelte
 
+### What I learned
 
-## Single-page app mode
+First time using Svelte. Wanted to start on a small and easy project. Learned a lot but I will need time to understand everything and practice on a bigger project.
 
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+### Continued development
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+-   I will learn the basics of Vue 3 to adapt this project too.
+-   Keep digging Svelte with Svelte Kit (SSR for this small challenge then Routing, etc)
 
-```js
-"start": "sirv public --single"
-```
+## Author
 
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+-   Website - [Clement Creusat](https://clement-creusat.vercel.app/)
+-   Frontend Mentor - [@ccreusat](https://www.frontendmentor.io/profile/yourusername)
+-   Github - [@ccreusat](https://github.com/ccreusat)
