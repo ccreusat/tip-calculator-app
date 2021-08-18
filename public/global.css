@@ -29,10 +29,15 @@ body {
 body {
 	font-family: "Space Mono", monospace;
 	font-size: 24px;
-	display: flex;
-	place-content: center;
-	place-items: center;
 	background-color: var(--body);
+}
+
+@media only screen and (min-width: 940px) {
+	body {
+		display: flex;
+		place-content: center;
+		place-items: center;
+	}
 }
 
 .flex {
@@ -142,28 +147,49 @@ input[type="number"]::placeholder {
 /* Main structure */
 
 .splitter__logo {
-	margin: auto;
-	margin-bottom: 80px;
+	margin: 50px auto;
 	text-align: center;
 }
 
-.splitter__container {
+@media only screen and (min-width: 940px) {
+	.splitter__logo {
+		margin-bottom: 80px;
+	}
+}
+
+/* .splitter__container {
 	display: flex;
 	justify-content: space-between;
 	width: 920px;
 	border-radius: var(--large-border-radius);
 	background-color: var(--white);
+} */
+
+.splitter__container {
+	padding: 32px;
+	border-radius: 25px 25px 0 0;
+	background-color: var(--white);
 }
 
-.splitter__container > div {
-	flex-basis: 0;
-	flex: 1;
-}
+@media only screen and (min-width: 940px) {
+	.splitter__container {
+		padding: 0;
+		display: flex;
+		justify-content: space-between;
+		width: 920px;
+		border-radius: var(--large-border-radius);
+	}
 
-.splitter__calculator {
-	margin: 48px;
-	min-width: 380px;
-	max-width: 380px;
+	.splitter__container > div {
+		flex-basis: 0;
+		flex: 1;
+	}
+
+	.splitter__calculator {
+		margin: 48px;
+		min-width: 380px;
+		max-width: 380px;
+	}
 }
 
 .splitter__result {
@@ -171,10 +197,16 @@ input[type="number"]::placeholder {
 	flex-basis: 100%;
 	flex-direction: column;
 	justify-content: space-between;
-	margin: 32px;
-	padding: 40px;
+	margin: 32px 0;
+	padding: 40px 24px;
 	border-radius: var(--medium-border-radius);
 	background-color: var(--dark-cyan);
+}
+
+@media only screen and (min-width: 940px) {
+	.splitter__result {
+		margin: 32px;
+	}
 }
 
 .splitter__result .legend {
@@ -186,17 +218,29 @@ input[type="number"]::placeholder {
 }
 
 .price {
-	font-size: 48px;
+	font-size: 32px;
 	letter-spacing: -1px;
 	color: var(--light-cyan);
+}
+
+@media only screen and (min-width: 940px) {
+	.price {
+		font-size: 48px;
+	}
 }
 
 /* Tips Component */
 .tips {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 48px 48px;
 	gap: 14px;
+}
+
+@media only screen and (min-width: 940px) {
+	.tips {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 .tips__control {
@@ -234,6 +278,7 @@ input[type="number"]::placeholder {
 
 /* Button component */
 button {
+	margin-top: 32px;
 	display: block;
 	cursor: pointer;
 	width: 100%;
@@ -254,4 +299,10 @@ button:disabled {
 
 button:not(:disabled):hover {
 	background-color: hsl(173, 61%, 77%);
+}
+
+@media only screen and (min-width: 940px) {
+	button {
+		margin-top: 0;
+	}
 }

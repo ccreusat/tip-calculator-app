@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://ccreusat-tip-calculator.vercel.app/)
+-   Solution URL: [Solution](https://your-solution-url.com)
+-   Live Site URL: [Live site](https://ccreusat-tip-calculator.vercel.app/)
 
 ## My process
 
@@ -41,17 +41,17 @@ Users should be able to:
 -   CSS custom properties
 -   Flexbox
 -   Mobile-first workflow
--   [Vanilla JS](https://reactjs.org/) - branch : master
+-   Vanilla JS - branch : master
 -   [React](https://reactjs.org/) - branch : react
 -   [Svelte](https://svelte.dev/) - branch : svelte
 
 ### What I learned
 
-First time using Svelte. Wanted to start on a small and easy project. Learned a lot but I will need time to understand everything and practice on a bigger project.
+First time using Svelte. Wanted to start on a small and easy project to learn it.
 
 ### Continued development
 
--   I will learn the basics of Vue 3 to adapt this project too.
+-   Vue 3 in progress
 -   Keep digging Svelte with Svelte Kit (SSR for this small challenge then Routing, etc)
 
 ## Author

@@ -10,8 +10,14 @@
 
 <style>
 	.logo {
-    margin: auto;
-    margin-bottom: 80px;
+    margin: 50px auto;
     text-align: center;
   }
+
+  @media only screen and (min-width: 940px) {
+	.logo {
+    margin-top: 0;
+		margin-bottom: 80px;
+	}
+}
 </style>
