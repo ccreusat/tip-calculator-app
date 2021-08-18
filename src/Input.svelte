@@ -12,12 +12,12 @@
     error = false;
   }
 
-  /* $: if (isNaN(value)) {
+  $: if (isNaN(value)) {
     value = "";
     error = true;
   } else {
     error = false;
-  } */
+  }
 
 </script>
 
