@@ -4,9 +4,9 @@
 	export let name = 'Splitter';
 </script>
 
-<div class="logo">
+<h1 class="logo">
   <a href="/" aria-label="Splitter Logo"><img src={src} alt={name}></a>
-</div>
+</h1>
 
 <style>
 	.logo {

@@ -33,7 +33,7 @@
   <label for="tips" class="legend">Select Tip %</label>
   <div class="tips">
     {#each tips as tip (tip)}
-      <div class="tips__control">
+      <label for="tip-{tip}" class="tips__control">
         <input
           class="tips__radio"
           type="radio"
@@ -41,8 +41,8 @@
           value={tip}
           bind:group={selected}
           on:change={onChange(selected)}>
-        <label class="tips__label" for="tip-{tip}">{tip} %</label>
-      </div>
+        <span class="tips__label" >{tip} %</span>
+      </label>
     {/each}
     <div class="tips__control">
       <input bind:value={$customTip} on:input={onCustomValue($customTip)} type="text" class="tips__custom" name="tip" id="tip-custom" placeholder="Custom">
