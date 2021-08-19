@@ -57,5 +57,5 @@ First time using Svelte. Wanted to start on a small and easy project to learn it
 ## Author
 
 -   Website - [Clement Creusat](https://clement-creusat.vercel.app/)
--   Frontend Mentor - [@ccreusat](https://www.frontendmentor.io/profile/yourusername)
+-   Frontend Mentor - [@ccreusat](https://www.frontendmentor.io/profile/ccreusat)
 -   Github - [@ccreusat](https://github.com/ccreusat)
