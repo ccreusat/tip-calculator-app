@@ -33,11 +33,12 @@
   <label for="tips" class="legend">Select Tip %</label>
   <div class="tips">
     {#each tips as tip (tip)}
-      <label for="tips" class="tips__control">
+      <label for={`tips-${tip}`} class="tips__control">
         <input
           class="tips__radio"
           type="radio"
           name="tips"
+          id={`tips-${tip}`}
           value={tip}
           bind:group={selected}
           on:change={onChange(selected)}>
