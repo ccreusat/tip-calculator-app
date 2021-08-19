@@ -145,7 +145,6 @@ input[type="number"]::placeholder {
 }
 
 /* Main structure */
-
 .splitter__logo {
 	margin: 50px auto;
 	text-align: center;
@@ -156,14 +155,6 @@ input[type="number"]::placeholder {
 		margin-bottom: 80px;
 	}
 }
-
-/* .splitter__container {
-	display: flex;
-	justify-content: space-between;
-	width: 920px;
-	border-radius: var(--large-border-radius);
-	background-color: var(--white);
-} */
 
 .splitter__container {
 	padding: 32px;
