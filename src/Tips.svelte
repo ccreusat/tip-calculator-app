@@ -33,7 +33,7 @@
   <label for="tips" class="legend">Select Tip %</label>
   <div class="tips">
     {#each tips as tip (tip)}
-      <label for="tip-{tip}" class="tips__control">
+      <label for="tips" class="tips__control">
         <input
           class="tips__radio"
           type="radio"
