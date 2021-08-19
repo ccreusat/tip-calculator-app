@@ -6,7 +6,7 @@
   let error = false;
 
   // Listeners
-  $: if (value === "" || value === 0) {
+  $: if (value === "" || parseInt(value) === 0) {
     error = true;
   } else {
     error = false;
@@ -18,6 +18,7 @@
   } else {
     error = false;
   }
+
 
 </script>
 

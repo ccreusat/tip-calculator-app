@@ -12,11 +12,13 @@ export const getTotal = derived(
 	[bill, numberOfPeople, selectedTip],
 	([$bill, $numberOfPeople, $selectedTip]) =>
 		parseFloat(
-			$bill / $numberOfPeople + $bill * ($selectedTip / 100)
+			$bill / parseInt($numberOfPeople) + $bill * ($selectedTip / 100)
 		).toFixed(2)
 );
 export const getTotalAmount = derived(
 	[bill, numberOfPeople, selectedTip],
 	([$bill, $numberOfPeople, $selectedTip]) =>
-		parseFloat(($bill * ($selectedTip / 100)) / $numberOfPeople).toFixed(2)
+		parseFloat(
+			($bill * ($selectedTip / 100)) / parseInt($numberOfPeople)
+		).toFixed(2)
 );
