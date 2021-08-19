@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot.png)
+![](https://ccreusat-tip-calculator.vercel.app/images/screenshot.png)
 
 ### Links
 
