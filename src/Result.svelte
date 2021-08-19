@@ -3,7 +3,6 @@
   import {
     bill,
     numberOfPeople,
-    selectedTip,
     getTotal,
     getTotalAmount
   } from "./store.js";
