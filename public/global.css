@@ -101,7 +101,7 @@ input[type="number"]::placeholder {
 }
 
 .bill,
-.number-of-people {
+.numberOfPeople {
 	background-position: 20px center;
 	background-repeat: no-repeat;
 }
@@ -110,7 +110,7 @@ input[type="number"]::placeholder {
 	background-image: url(./images/icon-dollar.svg);
 }
 
-.number-of-people {
+.numberOfPeople {
 	background-image: url(./images/icon-person.svg);
 }
 
