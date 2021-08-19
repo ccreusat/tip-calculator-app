@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Solution](https://your-solution-url.com)
+-   Solution URL: [Solution](https://www.frontendmentor.io/solutions/tip-calculator-using-svelte-YZlDRW7WcI)
 -   Live Site URL: [Live site](https://ccreusat-tip-calculator.vercel.app/)
 
 ## My process
