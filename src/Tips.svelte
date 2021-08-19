@@ -30,7 +30,7 @@
 </script>
 
 <fieldset class="fieldset">
-  <label for="tips" class="legend">Select Tip %</label>
+  <span class="legend">Select Tip %</span>
   <div class="tips">
     {#each tips as tip (tip)}
       <label for={`tips-${tip}`} class="tips__control">

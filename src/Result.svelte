@@ -39,16 +39,16 @@
 <div class="splitter__result">
   <div>
     <div class="control flex">
-      <label for="amount" class="legend">Tip Amount
-        <span>/ person</span></label>
+      <span class="legend">Tip Amount
+        <span>/ person</span></span>
       <strong class="price">
         $<span id="amount">{amount}</span>
       </strong>
     </div>
 
     <div class="control flex">
-      <label for="total" class="legend">Total
-        <span>/ person</span></label>
+      <span class="legend">Total
+        <span>/ person</span></span>
       <strong class="price">$<span id="total">{total}</span></strong>
     </div>
   </div>
